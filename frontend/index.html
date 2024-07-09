@@ -30,7 +30,32 @@
     </div>
 </footer>
 
+<!-- Подключаем официальный скрипт Telegram Web App -->
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="scripts.js"></script>
+
+<script>
+    // Этот скрипт должен быть включён в body документа, чтобы загружаться после того, как DOM будет готов.
+    if (Telegram.WebApp) {
+        Telegram.WebApp.ready();
+
+        // Получаем данные пользователя
+        const user = Telegram.WebApp.initDataUnsafe.user;
+
+        // Заполняем информацию о пользователе
+        const userNameElement = document.getElementById('userName');
+        const userAvatarElement = document.getElementById('userAvatar');
+
+        if (user) {
+            userNameElement.textContent = `${user.first_name} ${user.last_name}`;
+            userAvatarElement.src = user.photo_url || 'path-to-default-avatar.png'; // Укажите путь к изображению по умолчанию.
+            // Удаляем скрытый класс, если ранее добавлен
+        } else {
+            userNameElement.textContent = 'User information not available.';
+            // Можно отобразить сообщение об ошибке или скрыть элементы
+        }
+    } else {
+        console.error('Telegram Web App SDK not loaded!');
+    }
+</script>
 </body>
 </html>
