@@ -48,3 +48,7 @@ input, button, .rounded {
 input[type="text"] {
     color: #E2E8F0; /* Цвет текста */
 }
+
+.object-scale-down {
+    object-fit: scale-down;
+}
