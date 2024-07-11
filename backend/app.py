@@ -2,6 +2,7 @@ import logging
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 import os
+from dotenv import load_dotenv
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -9,7 +10,9 @@ logging.basicConfig(
 )
 
 
-TOKEN = os.environ['TELEGRAM_TOKEN']
+load_dotenv()
+
+TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
