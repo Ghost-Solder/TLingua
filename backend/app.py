@@ -1,6 +1,6 @@
 import logging
-from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, WebAppInfo
+from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
 import os
 from dotenv import load_dotenv
 
@@ -15,14 +15,23 @@ load_dotenv()
 TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Sends a message with three inline buttons attached."""
+
+    keyboard = [[
+        InlineKeyboardButton("Let's GO!", web_app=WebAppInfo(url="https://ghost-solder.github.io/TLingua/"))
+    ]]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await update.message.reply_text("Let's GO!", reply_markup=reply_markup)
 
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(TOKEN).build()
 
-    start_handler = CommandHandler('start', start)
-    application.add_handler(start_handler)
+    application.add_handler(CommandHandler("start", start))
 
-    application.run_polling()
+    # Run the bot until the user presses Ctrl-C
+    application.run_polling(allowed_updates=Update.ALL_TYPES)
+
