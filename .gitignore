@@ -1,4 +1,2 @@
-# file: ~/.gitignore_global
-
 .env
 .idea/
