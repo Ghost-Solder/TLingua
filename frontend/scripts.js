@@ -1,3 +1,17 @@
+function displayLanguage(code) {
+    // Словарь с переводами
+    const languageNames = {
+        'en': 'English',
+        'ru': 'Русский',
+        'es': 'Español',
+        // Добавьте другие языки по необходимости
+    };
+
+    // Отображение языка пользователя
+    const languageName = languageNames[code] || 'Unknown';
+    userLanguageElement.textContent = languageName;
+}
+
 if (Telegram.WebApp) {
     Telegram.WebApp.ready();
     const user = Telegram.WebApp.initDataUnsafe.user;
@@ -18,18 +32,4 @@ if (Telegram.WebApp) {
     }
 } else {
     console.error('Telegram Web App SDK not loaded!');
-}
-
-function displayLanguage(code) {
-    // Словарь с переводами
-    const languageNames = {
-        'en': 'English',
-        'ru': 'Русский',
-        'es': 'Español',
-        // Добавьте другие языки по необходимости
-    };
-
-    // Отображение языка пользователя
-    const languageName = languageNames[code] || 'Unknown';
-    userLanguageElement.textContent = languageName;
 }

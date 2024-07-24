@@ -1,0 +1,8 @@
+.footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.footer-link .fa-lg {
+    font-size: text-sm;
+}
