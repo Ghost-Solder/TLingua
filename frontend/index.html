@@ -25,26 +25,35 @@
         <input class="w-full rounded p-2 bg-gray-800" type="text" placeholder="Search for tutors">
     </section>
 
-    <section id="tutors" class="mb-6">
-        <!-- Содержимое карточек преподавателей здесь -->
+<!--    <section id="tutors" class="mb-6">-->
+<!--        &lt;!&ndash; Содержимое карточек преподавателей здесь &ndash;&gt;-->
+<!--    </section>-->
+    <section id="tutorsPage" class="hidden">
+        <div class="search-bar">
+            <input id="tutorSearchInput" class="search-input" type="text" placeholder="Search for tutors" />
+            <button id="tutorSearchButton" class="search-button">Search</button>
+        </div>
+        <div id="tutorsList" class="tutors-list">
+            <!-- Список преподавателей будет добавлен здесь -->
+        </div>
     </section>
 </main>
 
 <footer class="bg-black fixed inset-x-0 bottom-0 px-4">
     <div class="container mx-auto py-4 flex justify-between text-center">
-        <a href="#home" class="text-white flex flex-col items-center text-sm">
+        <a href="#home" class="footer-link text-white flex flex-col items-center text-sm">
             <i class="fas fa-home fa-lg"></i>
             <span>Home</span>
         </a>
-        <a href="#tasks" class="text-white flex flex-col items-center text-sm">
+        <a href="#tasks" class="footer-link text-white flex flex-col items-center text-sm">
             <i class="fas fa-tasks fa-lg"></i>
             <span>Lessons</span>
         </a>
-        <a href="#friends" class="text-white flex flex-col items-center text-sm">
+        <a href="#friends" class="footer-link text-white flex flex-col items-center text-sm">
             <i class="fas fa-user-friends fa-lg"></i>
             <span>Tutors</span>
         </a>
-        <a href="#wallet" class="text-white flex flex-col items-center text-sm">
+        <a href="#wallet" class="footer-link text-white flex flex-col items-center text-sm">
             <i class="fas fa-wallet fa-lg"></i>
             <span>Wallet</span>
         </a>

@@ -6,3 +6,24 @@
 .footer-link .fa-lg {
     font-size: 1rem;
 }
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.search-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Пример цвета кнопки */
+    color: white;
+}
+
+.tutors-list {
+    /* Стилизация для списка преподавателей */
+}
