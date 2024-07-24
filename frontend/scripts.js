@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.footer-link').forEach(link => {
         link.addEventListener('click', function() {
+            event.preventDefault();
             const targetSection = this.getAttribute('data-target');
             showSection(targetSection);
         });
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.getElementById('tutorSearchButton').addEventListener('click', function() {
+        event.preventDefault();
         const searchTerm = document.getElementById('tutorSearchInput').value;
         searchTutors(searchTerm);
     });
