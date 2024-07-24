@@ -62,9 +62,5 @@ document.addEventListener('DOMContentLoaded', function() {
         searchTutors(searchTerm);
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Добавить код, который должен выполняться после загрузки DOM
-    });
-
     showSection('homePage');
 });
